@@ -115,15 +115,6 @@ minx = math.floor(bhours / 60)
 sec = math.floor(bhours % 3600) % 60
 return string.format("%02d:%02d", minx, sec)
 end
-function ChannelJoin(msg)
-JoinChannel = true
-local url , res = https.request('https://api.telegram.org/bot1416599526:AAFwZ1MOwcjHGQkhSHKmPt8vDMq6gOBqZ_M/getchatmember?chat_id=@AL_MASLAWI&user_id='..msg.sender.user_id)
-local ChannelJoin = JSON.decode(url)
-if ChannelJoin and ChannelJoin.result and ChannelJoin.result.status == "left" then
-JoinChannel = false
-end
-return JoinChannel
-end
 function Bot(msg)  
 local idbot = false  
 if tonumber(msg.sender.user_id) == tonumber(bot_id) then  
@@ -3242,10 +3233,6 @@ end
 ---
 if Owner(msg) then
 if text == "ترتيب الاوامر" then
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'Raumo  SOURCE | سورس راومو', url = 'https://t.me/AL_MASLAWI'}, },}}
-return bot.sendText(msg.chat_id,msg.id,'*\n￤• عليك الاشتراك في قناة البوت اولاً ༄  ،*',"md",false, false, false, false, reply_markup) 
-end
 redis:set(bot_id..":"..msg.chat_id..":Command:ا","ايدي")
 redis:sadd(bot_id.."List:Command:"..msg.chat_id,"ا")
 redis:set(bot_id..":"..msg.chat_id..":Command:غ","غنيلي")
